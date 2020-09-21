@@ -1,0 +1,90 @@
+[
+  {
+    "id": 900,
+    "name": {
+      "english": "none",
+      "japanese": "none",
+      "chinese": "妙蛙种子",
+      "french": "Bulbizarre"
+    },
+    "type": "紫",
+    "base": {
+      "HP": 0,
+      "MP": 0,
+      "ちから": 0,
+      "みのまもり": 0,
+      "かしこさ": 0,
+      "すばやさ": 0,
+      "回復魔力": 0,
+      "魔法魔力": 0
+    },
+    "skillList2": [],
+    "skillDetail": []
+  },
+  {
+    "id": 901,
+    "name": {
+      "english": "none",
+      "japanese": "none",
+      "chinese": "妙蛙种子",
+      "french": "Bulbizarre"
+    },
+    "type": "紫",
+    "base": {
+      "HP": 0,
+      "MP": 0,
+      "ちから": 0,
+      "みのまもり": 0,
+      "かしこさ": 0,
+      "すばやさ": 0,
+      "回復魔力": 0,
+      "魔法魔力": 0
+    },
+    "skillList2": [],
+    "skillDetail": []
+  },
+  {
+    "id": 902,
+    "name": {
+      "english": "none",
+      "japanese": "none",
+      "chinese": "妙蛙种子",
+      "french": "Bulbizarre"
+    },
+    "type": "紫",
+    "base": {
+      "HP": 0,
+      "MP": 0,
+      "ちから": 0,
+      "みのまもり": 0,
+      "かしこさ": 0,
+      "すばやさ": 0,
+      "回復魔力": 0,
+      "魔法魔力": 0
+    },
+    "skillList2": [],
+    "skillDetail": []
+  },
+  {
+    "id": 903,
+    "name": {
+      "english": "none",
+      "japanese": "none",
+      "chinese": "妙蛙种子",
+      "french": "Bulbizarre"
+    },
+    "type": "紫",
+    "base": {
+      "HP": 0,
+      "MP": 0,
+      "ちから": 0,
+      "みのまもり": 0,
+      "かしこさ": 0,
+      "すばやさ": 0,
+      "回復魔力": 0,
+      "魔法魔力": 0
+    },
+    "skillList2": [],
+    "skillDetail": []
+  }
+]

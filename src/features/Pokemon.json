@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": {
+      "english": "Bulbasaur",
+      "japanese": "フシギダネ?",
+      "chinese": "妙蛙种子",
+      "french": "Bulbizarre"
+    },
+    "type": ["NORMAL", "Poison"],
+    "base": {
+      "HP": 45,
+      "Attack": 49,
+      "Defense": 49,
+      "Sp. Attack": 65,
+      "Sp. Defense": 65,
+      "Speed": 45
+    }
+  },
+  {
+    "id": 2,
+    "name": {
+      "english": "Bulbasaur",
+      "japanese": "ピカチュウ",
+      "chinese": "妙蛙种子",
+      "french": "Bulbizarre"
+    },
+    "type": ["FIRE", "Poison"],
+    "base": {
+      "HP": 45,
+      "Attack": 49,
+      "Defense": 49,
+      "Sp. Attack": 65,
+      "Sp. Defense": 65,
+      "Speed": 45
+    }
+  },
+  {
+    "id": 3,
+    "name": {
+      "english": "Bulbasaur",
+      "japanese": "銭亀",
+      "chinese": "妙蛙种子",
+      "french": "Bulbizarre"
+    },
+    "type": ["WATER", "FIRE"],
+    "base": {
+      "HP": 45,
+      "Attack": 49,
+      "Defense": 49,
+      "Sp. Attack": 65,
+      "Sp. Defense": 65,
+      "Speed": 45
+    }
+  },
+  {
+    "id": 4,
+    "name": {
+      "english": "Bulbasaur",
+      "japanese": "ヒトカゲ",
+      "chinese": "妙蛙种子",
+      "french": "Bulbizarre"
+    },
+    "type": ["ELECTRIC"],
+    "base": {
+      "HP": 45,
+      "Attack": 49,
+      "Defense": 49,
+      "Sp. Attack": 65,
+      "Sp. Defense": 65,
+      "Speed": 45
+    }
+  },
+  {
+    "id": 5,
+    "name": {
+      "english": "Bulbasaur",
+      "japanese": "ミュウ",
+      "chinese": "妙蛙种子",
+      "french": "Bulbizarre"
+    },
+    "type": ["NORMAL", "FIRE"],
+    "base": {
+      "HP": 45,
+      "Attack": 49,
+      "Defense": 49,
+      "Sp. Attack": 65,
+      "Sp. Defense": 65,
+      "Speed": 45
+    }
+  }
+]

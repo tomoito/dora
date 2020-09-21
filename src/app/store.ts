@@ -1,9 +1,13 @@
-import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
+// import counterReducer from '../features/counter/counterSlice';
+import PokeReducer from "../features/Pokemon/PokemonSlice";
+import DoraReducer from "../features/DraqueWalk/DraqueWalkSlice";
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    // counter: counterReducer,
+    Pokemon: PokeReducer,
+    Doraque: DoraReducer,
   },
 });
 

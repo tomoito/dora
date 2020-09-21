@@ -1,0 +1,4 @@
+skill:
+{"name":"‘Ï«","value":10},
+{"name":"‘®«","value":5},
+[
