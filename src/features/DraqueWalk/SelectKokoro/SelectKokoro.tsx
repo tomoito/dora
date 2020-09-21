@@ -43,7 +43,7 @@ const SelectKokoro = (props: any) => {
   return (
     <div>
       <Typography variant="subtitle1" className={classes.text}>
-        こころをドラッグアンドドロップしてね
+        こころをドラッグアンドドロップしてね★★
       </Typography>
       <Grid container spacing={3}>
         <SelectedType />
