@@ -1,5 +1,5 @@
 import React from "react";
-import { Paper, Typography, Grid, makeStyles } from "@material-ui/core";
+import { Paper, Typography, Grid, makeStyles, Avatar } from "@material-ui/core";
 import { ToggleButtonGroup, ToggleButton } from "@material-ui/lab";
 import {
   searchVal,
@@ -30,6 +30,13 @@ const useSytles = makeStyles({
 const SearchField = () => {
   const classes = useSytles();
   const filerItem_color = ["赤", "青", "黄", "緑"];
+  const filerItem_img = [
+    "red_si.png",
+    "purple_si.png",
+    "yellow_si.png",
+    "green_si.png",
+  ];
+
   const test = ["赤", "緑"];
 
   const filerItem_main = [
@@ -37,6 +44,8 @@ const SearchField = () => {
     "魔力アップ",
     "スキルのHP回復効果",
   ];
+
+  const filerItem_main_path = ["1.png", "2.png", "3.png"];
 
   const filerItem_taisei = [
     "メラ耐性",
@@ -46,6 +55,16 @@ const SearchField = () => {
     "ディン耐性",
     "イオ耐性",
     "ヒャド耐性",
+  ];
+
+  const filerItem_taisei_path = [
+    "7.png",
+    "11.png",
+    "22.png",
+    "33.png",
+    "44.png",
+    "7.png",
+    "7.png",
   ];
 
   const filerItem_kouka = [
@@ -99,54 +118,78 @@ const SearchField = () => {
             className={classes.toggleGroup}
             onChange={handleClick}
           >
-            {filerItem_color.map((i) => (
+            {filerItem_color.map((i, y) => (
               <ToggleButton value={i}>
-                <Typography>{i}</Typography>
+                {/* <Typography>{i}</Typography> */}
+                <Avatar
+                  key={i}
+                  // size="30"
+                  alt={i}
+                  src={`/static/filter_color/${filerItem_img[y]}`}
+                ></Avatar>
               </ToggleButton>
             ))}
-            <ToggleButton value="aiueo">
-              <Typography>aiueo</Typography>
-            </ToggleButton>
-            {/* <Grid container spacing={1}>
-            {filerItem_taisei.map((i) => (
-              <Grid item>
-                <ToggleButton value={i}>
-                  <Typography>{i}</Typography>
-                </ToggleButton>
-              </Grid>
-            ))}
-          </Grid> */}
           </ToggleButtonGroup>
         </Paper>
       </Grid>
 
-      <Grid container spacing={1}>
-        <Paper className={classes.serach}>
+      <Grid container spacing={1} direction="column" alignItems="flex-start">
+        {/* <Paper className={classes.serach}> */}
+        <Grid item xs={8}>
           <ToggleButtonGroup
             value={filter_kouka}
             className={classes.toggleGroup}
             onChange={handleClick_option}
             exclusive={false}
           >
-            {filerItem_main.map((i) => (
+            {filerItem_main.map((i, y) => (
               <ToggleButton value={i}>
-                <Typography>{i}</Typography>
-              </ToggleButton>
-            ))}
-
-            {filerItem_taisei.map((i) => (
-              <ToggleButton value={i}>
-                <Typography>{i}</Typography>
-              </ToggleButton>
-            ))}
-
-            {filerItem_kouka.map((i) => (
-              <ToggleButton value={i}>
-                <Typography>{i}</Typography>
+                <Avatar
+                  key={i}
+                  alt={i}
+                  src={`/static/filter_zokusei/${filerItem_main_path[y]}`}
+                />
               </ToggleButton>
             ))}
           </ToggleButtonGroup>
-        </Paper>
+        </Grid>
+
+        <Grid item xs={8}>
+          <ToggleButtonGroup
+            value={filter_kouka}
+            className={classes.toggleGroup}
+            onChange={handleClick_option}
+            exclusive={false}
+          >
+            {filerItem_taisei.map((i, y) => (
+              <ToggleButton value={i}>
+                <Avatar
+                  key={i}
+                  alt={i}
+                  src={`/static/filter_zokusei/${filerItem_taisei_path[y]}`}
+                />
+              </ToggleButton>
+            ))}
+
+            {/* {filerItem_kouka.map((i) => (
+              <ToggleButton value={i}>
+                <Avatar
+                  key={i}
+                  alt={i}
+                  src={`/static/filter_zokusei/${filerItem_taisei_path[y]}`}
+                />{" "}
+              </ToggleButton>
+            ))} */}
+          </ToggleButtonGroup>
+        </Grid>
+        {/* 
+        {filerItem_taisei.map((i) => (
+          <ToggleButton value={i}>
+            <Typography>{i}</Typography>
+          </ToggleButton>
+        ))} */}
+
+        {/* </Paper> */}
       </Grid>
     </div>
   );

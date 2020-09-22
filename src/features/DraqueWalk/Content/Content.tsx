@@ -36,7 +36,7 @@ const useStyles = makeStyles({
     width: 100,
   },
   mgn: {
-    marginLeft: 5,
+    marginLeft: 100,
   },
 });
 
@@ -70,7 +70,7 @@ const Content = () => {
       <Grid container spacing={2} className={classes.mgn}>
         <Grid item container xs={12} lg={9}>
           <Grid item container direction="column" spacing={4}>
-            <Grid item>
+            <Grid item container>
               <SearchField />
             </Grid>
             <Box>

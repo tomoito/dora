@@ -14,6 +14,7 @@ import {
 import { useDispatch } from "react-redux";
 import { searchVal, doraSearch } from "../DraqueWalkSlice";
 import { useSelector } from "react-redux";
+import Sample from "../Sample/Sample";
 
 const useStyles = makeStyles({
   root: {
