@@ -36,7 +36,7 @@ const useStyles = makeStyles({
     width: 100,
   },
   mgn: {
-    marginLeft: 100,
+    marginLeft: 10,
   },
 });
 
