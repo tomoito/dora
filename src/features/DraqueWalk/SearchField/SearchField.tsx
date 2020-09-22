@@ -25,6 +25,19 @@ const useSytles = makeStyles({
     background: "#fff",
     spacing: "10px",
   },
+  toggleButton: {
+    padding: 0,
+  },
+  toggleContainer: {
+    textAlign: "center",
+    zoom: 1.7,
+    padding: 2,
+  },
+  toggleContainer2: {
+    textAlign: "center",
+    zoom: 1.2,
+    padding: 0,
+  },
 });
 
 const SearchField = () => {
@@ -119,7 +132,7 @@ const SearchField = () => {
             onChange={handleClick}
           >
             {filerItem_color.map((i, y) => (
-              <ToggleButton value={i}>
+              <ToggleButton value={i} className={classes.toggleButton}>
                 {/* <Typography>{i}</Typography> */}
                 <Avatar
                   key={i}
@@ -143,10 +156,11 @@ const SearchField = () => {
             exclusive={false}
           >
             {filerItem_main.map((i, y) => (
-              <ToggleButton value={i}>
+              <ToggleButton value={i} className={classes.toggleButton}>
                 <Avatar
                   key={i}
                   alt={i}
+                  className={classes.toggleContainer}
                   src={`/static/filter_zokusei/${filerItem_main_path[y]}`}
                 />
               </ToggleButton>
@@ -162,10 +176,11 @@ const SearchField = () => {
             exclusive={false}
           >
             {filerItem_taisei.map((i, y) => (
-              <ToggleButton value={i}>
+              <ToggleButton value={i} className={classes.toggleButton}>
                 <Avatar
                   key={i}
                   alt={i}
+                  className={classes.toggleContainer2}
                   src={`/static/filter_zokusei/${filerItem_taisei_path[y]}`}
                 />
               </ToggleButton>
