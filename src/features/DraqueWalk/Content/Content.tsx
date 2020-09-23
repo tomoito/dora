@@ -68,7 +68,7 @@ const Content = () => {
   return (
     <div>
       <Grid container spacing={2} className={classes.mgn}>
-        <Grid item container xs={12} lg={9}>
+        <Grid item container xs={12} lg={7}>
           <Grid item container direction="column" spacing={4}>
             <Grid item container>
               <SearchField />
@@ -99,7 +99,7 @@ const Content = () => {
             </Grid>
           </Grid>
         </Grid>
-        <Grid item container xs={2}>
+        <Grid item container xs={12} lg={5}>
           <Grid item xs={12}>
             <Box className={classes.chart}>
               <SelectKokoro />

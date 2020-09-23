@@ -42,9 +42,8 @@ const SelectKokoro = (props: any) => {
 
   return (
     <div>
-      <Typography variant="subtitle1" className={classes.text}>
-        こころをドラッグアンドドロップしてね★★
-      </Typography>
+      <p></p>
+      <Typography variant="subtitle1" className={classes.text}></Typography>
       <Grid container spacing={3}>
         <SelectedType />
 
@@ -64,7 +63,7 @@ const SelectKokoro = (props: any) => {
       </Grid>
 
       <Grid container spacing={3}>
-        <Grid item xs={6}>
+        <Grid item xs={12}>
           {/* <Charts_rader /> */}
           {listSkillSum.map((i) => (
             <li>
@@ -74,7 +73,7 @@ const SelectKokoro = (props: any) => {
         </Grid>
         <Divider />
 
-        <Grid item xs={6}>
+        <Grid item xs={12}>
           {/* <Charts_rader /> */}
           {skillDora.map((i) => (
             <li>

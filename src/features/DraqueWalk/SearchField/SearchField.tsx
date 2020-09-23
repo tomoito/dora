@@ -26,17 +26,20 @@ const useSytles = makeStyles({
     spacing: "10px",
   },
   toggleButton: {
-    padding: 0,
+    marginTop: 5,
+    padding: 3,
+    backgroundColor: "green",
   },
+
   toggleContainer: {
     textAlign: "center",
-    zoom: 1.7,
+    zoom: 1.2,
     padding: 2,
   },
   toggleContainer2: {
     textAlign: "center",
     zoom: 1.2,
-    padding: 0,
+    padding: 2,
   },
 });
 
