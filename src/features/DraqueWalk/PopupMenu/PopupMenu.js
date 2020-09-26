@@ -4,7 +4,18 @@ import "./PopupMenu.scss";
 import { useSelector, useDispatch } from "react-redux";
 import { skillSelectedSum_detail } from "../DraqueWalkSlice";
 import Button from "@material-ui/core/Button";
+import Grid from "@material-ui/core/Grid";
+import { makeStyles, Typography } from "@material-ui/core";
 
+const useStyles = makeStyles({
+  chart: {
+    width: 200,
+    height: 200,
+  },
+  btn: {
+    margin: 10,
+  },
+});
 const PopupMenu = (props) => {
   const { item } = props;
   const distPath = useDispatch();
@@ -47,12 +58,7 @@ const PopupMenu = (props) => {
     // document.addEventListener("click", documentClickHandler.current);
   };
 
-  // const documentClickHandler = (e) => {
-  //   if (popupRef.current.contains(e.target)) return;
-
-  //   setIsShown(false);
-  //   document.body.removeEventListener("click", documentClickHandler);
-  // };
+  const classes = useStyles();
 
   return (
     <div className="popup-menu-container">
@@ -65,11 +71,41 @@ const PopupMenu = (props) => {
       </Button>
       <div className={`popup-menu ${isShown ? "shown" : ""}`} ref={popupRef}>
         {" "}
-        <div>menu</div>
-        <button onClick={() => handleCloseButtonClick(1)}>虹</button>
-        <button onClick={() => handleCloseButtonClick(2)}>赤</button>
-        <button onClick={() => handleCloseButtonClick(3)}>青</button>
-        <button onClick={() => handleCloseButtonClick(4)}>黄</button>
+        <Typography>選択してね</Typography>{" "}
+        <Grid container>
+          <Grid item xs={3} className={classes.btn}>
+            <Button
+              variant="outlined"
+              onClick={() => handleCloseButtonClick(1)}
+            >
+              虹
+            </Button>
+          </Grid>
+          <Grid item xs={3} className={classes.btn}>
+            <Button
+              variant="outlined"
+              onClick={() => handleCloseButtonClick(2)}
+            >
+              赤
+            </Button>
+          </Grid>
+          <Grid item xs={3} className={classes.btn}>
+            <Button
+              variant="outlined"
+              onClick={() => handleCloseButtonClick(3)}
+            >
+              青
+            </Button>
+          </Grid>
+          <Grid item xs={3} className={classes.btn}>
+            <Button
+              variant="outlined"
+              onClick={() => handleCloseButtonClick(4)}
+            >
+              黄
+            </Button>
+          </Grid>
+        </Grid>
       </div>
     </div>
   );
