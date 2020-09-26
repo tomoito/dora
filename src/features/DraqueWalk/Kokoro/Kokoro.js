@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { Draggable } from "react-beautiful-dnd";
 import PopupMenu from "../PopupMenu/PopupMenu";
 import "./Kokoro.scss";
+import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles({
   kokoro: {
@@ -77,8 +78,9 @@ const Kokoro = (props) => {
           <li>{item.base.ちから}</li>
         </div>
       </div>
-      <div>{item.base.HP}</div>
-      <div>{item.name.japanese}</div>
+      <Typography>{item.base.HP}</Typography>
+      <Typography variant="h8">{item.name.japanese}</Typography>
+
       <PopupMenu item={item} />
       {/* {item.base.map((i) => (
         <p>i</p>

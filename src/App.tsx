@@ -10,6 +10,7 @@ import { ItemType } from "./features/DraqueWalk/Provider/Types";
 import ApiContextProvider, {
   ApiContext,
 } from "./features/DraqueWalk/Provider/ApiContext";
+import GlobalStyle from "./features/DraqueWalk/grobalStyles";
 
 function App() {
   // const kokoroList = useContext(ApiContext);

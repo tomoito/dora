@@ -3,6 +3,8 @@ import React, { useState, useRef, useEffect } from "react";
 import "./PopupMenu.scss";
 import { useSelector, useDispatch } from "react-redux";
 import { skillSelectedSum_detail } from "../DraqueWalkSlice";
+import Button from "@material-ui/core/Button";
+
 const PopupMenu = (props) => {
   const { item } = props;
   const distPath = useDispatch();
@@ -54,7 +56,13 @@ const PopupMenu = (props) => {
 
   return (
     <div className="popup-menu-container">
-      <button onClick={handleToggleButtonClick}>Toggle Menu</button>
+      <Button
+        color="secondary"
+        variant="outlined"
+        onClick={handleToggleButtonClick}
+      >
+        追加
+      </Button>
       <div className={`popup-menu ${isShown ? "shown" : ""}`} ref={popupRef}>
         {" "}
         <div>menu</div>

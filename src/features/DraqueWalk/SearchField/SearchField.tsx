@@ -26,9 +26,9 @@ const useSytles = makeStyles({
     spacing: "10px",
   },
   toggleButton: {
-    marginTop: 5,
     padding: 3,
-    backgroundColor: "green",
+    margin: 3,
+    backgroundColor: "#99CC66",
   },
 
   toggleContainer: {
@@ -40,6 +40,12 @@ const useSytles = makeStyles({
     textAlign: "center",
     zoom: 1.2,
     padding: 2,
+  },
+  filterType: {
+    backgroundColor: "white",
+    zoom: 1.2,
+    padding: 10,
+    margin: 3,
   },
 });
 
@@ -135,7 +141,7 @@ const SearchField = () => {
             onChange={handleClick}
           >
             {filerItem_color.map((i, y) => (
-              <ToggleButton value={i} className={classes.toggleButton}>
+              <ToggleButton value={i} className={classes.filterType}>
                 {/* <Typography>{i}</Typography> */}
                 <Avatar
                   key={i}
