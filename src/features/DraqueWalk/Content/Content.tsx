@@ -76,7 +76,7 @@ const Content = () => {
             <Box>
               <Grid item container>
                 {dispDora.map((x, y: any) => (
-                  <Grid item>
+                  <Grid item xs={4} lg={2}>
                     <Kokoro
                       item={x}
                       index={y}
@@ -87,16 +87,6 @@ const Content = () => {
                 ))}
               </Grid>
             </Box>
-            {/* <ListKokoro /> */}
-
-            <Grid item xs={12}>
-              {/* <Charts_rader /> */}
-              {/* {skillDora.map((i) => (
-                <li>
-                  {i[0]}:{i[1]}
-                </li>
-              ))} */}
-            </Grid>
           </Grid>
         </Grid>
         <Grid item container xs={12} lg={5}>

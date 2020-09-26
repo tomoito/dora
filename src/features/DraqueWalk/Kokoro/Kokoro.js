@@ -5,11 +5,20 @@ import { Draggable } from "react-beautiful-dnd";
 import PopupMenu from "../PopupMenu/PopupMenu";
 import "./Kokoro.scss";
 import Typography from "@material-ui/core/Typography";
+import Box from "@material-ui/core/Box";
+import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles({
   kokoro: {
     height: 100,
     width: 100,
+    alignItems: "center",
+    justifyContent: "center",
+    display: "flex",
+  },
+  card: {
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
 const StyledItem = styled.div`
@@ -58,30 +67,41 @@ const Kokoro = (props) => {
   };
 
   return (
-    <div>
-      <Avatar
-        key={key}
-        // size="30"
-        alt={item.id}
-        src={`/static/images/${item.fileName}`}
-        className={classes.kokoro}
-        onClick={handleToggleButtonClick}
-      ></Avatar>
-      <div className="popup-menu-container">
-        <div className={`popup-menu ${isShown ? "shown" : ""}`} ref={popupRef}>
-          {" "}
-          <button onClick={() => handleCloseButtonClick(1)}>閉じる</button>
-          <li>名前：{item.name.japanese}</li>
-          <li>色：{item.type}</li>
-          <li>{item.base.HP}</li>
-          <li>{item.base.MP}</li>
-          <li>{item.base.ちから}</li>
-        </div>
-      </div>
-      <Typography>{item.base.HP}</Typography>
-      <Typography variant="h8">{item.name.japanese}</Typography>
+    <div className={classes.card}>
+      <Grid container>
+        <Grid item>
+          <Avatar
+            key={key}
+            // size="30"
+            alt={item.id}
+            src={`/static/images/${item.fileName}`}
+            className={classes.kokoro}
+            onClick={handleToggleButtonClick}
+          ></Avatar>
+        </Grid>
+        <Grid item>
+          <div className="popup-menu-container">
+            <div
+              className={`popup-menu ${isShown ? "shown" : ""}`}
+              ref={popupRef}
+            >
+              {" "}
+              <button onClick={() => handleCloseButtonClick(1)}>閉じる</button>
+              <li>名前：{item.name.japanese}</li>
+              <li>色：{item.type}</li>
+              <li>{item.base.HP}</li>
+              <li>{item.base.MP}</li>
+              <li>{item.base.ちから}</li>
+            </div>
+          </div>
+          <Box className={classes.card}>
+            <Typography className={classes.card}>{item.base.HP}</Typography>
+            <Typography variant="h8">{item.name.japanese}</Typography>
+            <PopupMenu item={item} />
+          </Box>
+        </Grid>
+      </Grid>
 
-      <PopupMenu item={item} />
       {/* {item.base.map((i) => (
         <p>i</p>
       ))} */}

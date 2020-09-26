@@ -57,7 +57,7 @@ const SelectKokoro = (props: any) => {
       {/* yoko */}
       <Grid container>
         {/* <SelectedType /> */}
-        <Grid container item spacing={1} xs={5} lg={5}>
+        <Grid container item spacing={1} xs={12} lg={5}>
           {kokoroDetail.map((x: any, y: any) => (
             <Grid item xs={6} spacing={1}>
               {/* <Avatar className={classes.kokoro}>
@@ -88,12 +88,11 @@ const SelectKokoro = (props: any) => {
                 ))}
               </Table>
             </TableContainer>
-            <Divider />
           </Grid>
         </Grid>
 
-        <Grid container item xs={6}>
-          <Grid item xs={8}>
+        <Grid container item xs={12} lg={6}>
+          <Grid item xs={12}>
             <TableContainer component={Paper}>
               <Table aria-label="simple table">
                 {/* <Charts_rader /> */}
