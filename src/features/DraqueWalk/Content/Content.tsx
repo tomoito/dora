@@ -101,9 +101,10 @@ const Content = () => {
         </Grid>
         <Grid item container xs={12} lg={5}>
           <Grid item xs={12}>
-            <Box className={classes.chart}>
-              <SelectKokoro />
-            </Box>
+            {/* <Box className={classes.chart}> */}
+            {/* </p> */}
+            <SelectKokoro />
+            {/* </Box> */}
           </Grid>
         </Grid>
       </Grid>

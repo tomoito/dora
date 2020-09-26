@@ -3,6 +3,13 @@ import { Avatar, makeStyles, Grid, Typography } from "@material-ui/core";
 import { Draggable } from "react-beautiful-dnd";
 
 import { Divider } from "@material-ui/core";
+import Table from "@material-ui/core/Table";
+import TableBody from "@material-ui/core/TableBody";
+import TableCell from "@material-ui/core/TableCell";
+import TableContainer from "@material-ui/core/TableContainer";
+import TableHead from "@material-ui/core/TableHead";
+import TableRow from "@material-ui/core/TableRow";
+import Paper from "@material-ui/core/Paper";
 
 import {
   skillSum,
@@ -23,6 +30,9 @@ const useStyels = makeStyles({
     fontSize: 10,
     marginBottom: 5,
   },
+  table: {
+    mindWidth: 600,
+  },
 });
 
 // const StyledItem = styled.div`
@@ -42,44 +52,60 @@ const SelectKokoro = (props: any) => {
 
   return (
     <div>
-      <p></p>
       <Typography variant="subtitle1" className={classes.text}></Typography>
-      <Grid container spacing={3}>
-        <SelectedType />
 
-        {kokoroDetail.map((x: any, y: any) => (
-          <Grid item xs={6}>
-            {/* <Avatar className={classes.kokoro}>
+      {/* yoko */}
+      <Grid container>
+        {/* <SelectedType /> */}
+        <Grid container item spacing={1} xs={5} lg={5}>
+          {kokoroDetail.map((x: any, y: any) => (
+            <Grid item xs={6} spacing={1}>
+              {/* <Avatar className={classes.kokoro}>
               ???aaaaaa
             </Avatar> */}
-            <Avatar
-              className={classes.kokoro}
-              src={`/static/images/${x.fileName}`}
-            >
-              {x.name.japanese}{" "}
-            </Avatar>
+              <Avatar
+                className={classes.kokoro}
+                src={`/static/images/${x.fileName}`}
+              >
+                {x.name.japanese}{" "}
+              </Avatar>
+            </Grid>
+          ))}
+          <Grid item xs={12}>
+            {/* <Charts_rader /> */}
+            <TableContainer component={Paper}>
+              <Table className={classes.table} aria-label="simple table">
+                {listSkillSum.map((i) => (
+                  <TableRow>
+                    <TableCell>
+                      <Typography>{i[0]}</Typography>
+                    </TableCell>
+                    <TableCell>{i[1]}</TableCell>
+                  </TableRow>
+                  // <li>
+                  //   {i[0]}:{i[1]}
+                  // </li>
+                ))}
+              </Table>
+            </TableContainer>
+            <Divider />
           </Grid>
-        ))}
-      </Grid>
-
-      <Grid container spacing={3}>
-        <Grid item xs={12}>
-          {/* <Charts_rader /> */}
-          {listSkillSum.map((i) => (
-            <li>
-              {i[0]}:{i[1]}
-            </li>
-          ))}
         </Grid>
-        <Divider />
 
-        <Grid item xs={12}>
-          {/* <Charts_rader /> */}
-          {skillDora.map((i) => (
-            <li>
-              {i[0]}:{i[1]}
-            </li>
-          ))}
+        <Grid container item xs={6}>
+          <Grid item xs={8}>
+            <TableContainer component={Paper}>
+              <Table aria-label="simple table">
+                {/* <Charts_rader /> */}
+                {skillDora.map((i) => (
+                  <TableRow>
+                    <TableCell>{i[0]}</TableCell>
+                    <TableCell>{i[1]}</TableCell>
+                  </TableRow>
+                ))}{" "}
+              </Table>
+            </TableContainer>
+          </Grid>
         </Grid>
       </Grid>
 

@@ -148,7 +148,6 @@ const SearchField = () => {
           </ToggleButtonGroup>
         </Paper>
       </Grid>
-
       <Grid container spacing={1} direction="column" alignItems="flex-start">
         {/* <Paper className={classes.serach}> */}
         <Grid item xs={8}>
