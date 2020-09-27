@@ -74,7 +74,7 @@ const Content = () => {
               <SearchField />
             </Grid>
             <Box>
-              <Grid item container>
+              <Grid item container spacing={1}>
                 {dispDora.map((x, y: any) => (
                   <Grid item xs={4} lg={2}>
                     <Kokoro

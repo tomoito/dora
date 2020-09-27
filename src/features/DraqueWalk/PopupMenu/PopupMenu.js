@@ -6,6 +6,7 @@ import { skillSelectedSum_detail } from "../DraqueWalkSlice";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles, Typography } from "@material-ui/core";
+import Modal from "react-modal";
 
 const useStyles = makeStyles({
   chart: {
@@ -13,7 +14,8 @@ const useStyles = makeStyles({
     height: 200,
   },
   btn: {
-    margin: 10,
+    alignContent: "center",
+    alignItems: "center",
   },
 });
 const PopupMenu = (props) => {
@@ -50,6 +52,7 @@ const PopupMenu = (props) => {
 
   const handleCloseButtonClick = (e) => {
     const lst = [item.id, e];
+    setIsOpen(false);
 
     // distPath(skillSelectedSum_detail(item.id));
     distPath(skillSelectedSum_detail(lst));
@@ -60,20 +63,74 @@ const PopupMenu = (props) => {
 
   const classes = useStyles();
 
+  //modal start
+
+  const modalStyle = {
+    overlay: {
+      position: "fixed",
+      top: 0,
+      left: 0,
+      backgroundColor: "rgba(0,0,0,0.85)",
+    },
+    content: {
+      position: "absolute",
+      top: "2rem",
+      left: "2rem",
+      right: "2rem",
+      bottom: "5rem",
+      backgroundColor: "paleturquoise",
+      borderRadius: "1rem",
+      padding: "1.5rem",
+    },
+  };
+
+  var subtitle;
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function afterOpenModal() {
+    subtitle.style.color = "#3ab60b";
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  //modal end
+
   return (
     <div className="popup-menu-container">
-      <Button
+      {/* <Button
         color="secondary"
         variant="outlined"
-        onClick={handleToggleButtonClick}
-      >
-        追加
+        onClick={openModal}
+        // onClick={handleToggleButtonClick}
+      > */}
+      <Button variant="outlined" onClick={() => setIsOpen(true)}>
+        Open Modal
       </Button>
-      <div className={`popup-menu ${isShown ? "shown" : ""}`} ref={popupRef}>
-        {" "}
-        <Typography>選択してね</Typography>{" "}
+
+      {/* </Button> */}
+      <Modal
+        isOpen={modalIsOpen}
+        // style={modalStyle}
+        onRequestClose={() => setIsOpen(false)}
+        overlayClassName={{
+          base: "overlay-base",
+          afterOpen: "overlay-after",
+          beforeClose: "overlay-before",
+        }}
+        className={{
+          base: "content-base",
+          afterOpen: "content-after",
+          beforeClose: "content-before",
+        }}
+        closeTimeoutMS={500}
+      >
         <Grid container>
-          <Grid item xs={3} className={classes.btn}>
+          <Grid item xs={6} className={classes.btn}>
             <Button
               variant="outlined"
               onClick={() => handleCloseButtonClick(1)}
@@ -81,7 +138,7 @@ const PopupMenu = (props) => {
               虹
             </Button>
           </Grid>
-          <Grid item xs={3} className={classes.btn}>
+          <Grid item xs={6} className={classes.btn}>
             <Button
               variant="outlined"
               onClick={() => handleCloseButtonClick(2)}
@@ -89,7 +146,7 @@ const PopupMenu = (props) => {
               赤
             </Button>
           </Grid>
-          <Grid item xs={3} className={classes.btn}>
+          <Grid item xs={6} className={classes.btn}>
             <Button
               variant="outlined"
               onClick={() => handleCloseButtonClick(3)}
@@ -97,7 +154,7 @@ const PopupMenu = (props) => {
               青
             </Button>
           </Grid>
-          <Grid item xs={3} className={classes.btn}>
+          <Grid item xs={6} className={classes.btn}>
             <Button
               variant="outlined"
               onClick={() => handleCloseButtonClick(4)}
@@ -106,6 +163,9 @@ const PopupMenu = (props) => {
             </Button>
           </Grid>
         </Grid>
+      </Modal>
+      <div className={`popup-menu ${isShown ? "shown" : ""}`} ref={popupRef}>
+        {" "}
       </div>
     </div>
   );
