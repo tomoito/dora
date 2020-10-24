@@ -10,6 +10,9 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
+import CardActionArea from "@material-ui/core/CardActionArea";
+import CardContent from "@material-ui/core/CardContent";
+import { Card, CardMedia } from "@material-ui/core";
 
 import {
   skillSum,
@@ -32,6 +35,22 @@ const useStyels = makeStyles({
   },
   table: {
     mindWidth: 600,
+  },
+  media: {
+    height: 100,
+    width: 100,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  card: {
+    alignItems: "center",
+    justifyContent: "center",
+    textAlign: "center",
+    fontSize: "1vmin",
+    // fontSizeAdjust: 1,
+  },
+  tbl: {
+    borderRadius: "10 10 10 10",
   },
 });
 
@@ -57,21 +76,29 @@ const SelectKokoro = (props: any) => {
       {/* yoko */}
       <Grid container>
         {/* <SelectedType /> */}
-        <Grid container item spacing={1} xs={12} lg={5}>
+        <Grid container item spacing={1} xs={12} lg={10}>
           {kokoroDetail.map((x: any, y: any) => (
-            <Grid item xs={6} spacing={1}>
-              {/* <Avatar className={classes.kokoro}>
-              ???aaaaaa
-            </Avatar> */}
-              <Avatar
-                className={classes.kokoro}
-                src={`/static/images/${x.fileName}`}
-              >
-                {x.name.japanese}{" "}
-              </Avatar>
+            <Grid item xs={5} spacing={1}>
+              <Card className={classes.card} elevation={5}>
+                <CardMedia
+                  className={classes.media}
+                  image={`/static/images/${x.fileName}`}
+                />
+                <CardContent>
+                  <Typography className={classes.card}>{x.base.HP}</Typography>
+                  <Typography
+                    className={classes.card}
+                    gutterBottom
+                    variant="h6"
+                  >
+                    {x.name.japanese}
+                  </Typography>
+                </CardContent>
+              </Card>
             </Grid>
           ))}
-          <Grid item xs={12}>
+
+          <Grid item xs={5}>
             {/* <Charts_rader /> */}
             <TableContainer component={Paper}>
               <Table className={classes.table} aria-label="simple table">
@@ -89,12 +116,10 @@ const SelectKokoro = (props: any) => {
               </Table>
             </TableContainer>
           </Grid>
-        </Grid>
 
-        <Grid container item xs={12} lg={6}>
-          <Grid item xs={12}>
+          <Grid item xs={7}>
             <TableContainer component={Paper}>
-              <Table aria-label="simple table">
+              <Table aria-label="simple table" className={classes.tbl}>
                 {/* <Charts_rader /> */}
                 {skillDora.map((i) => (
                   <TableRow>
@@ -106,6 +131,22 @@ const SelectKokoro = (props: any) => {
             </TableContainer>
           </Grid>
         </Grid>
+
+        {/* 
+        <Grid container item xs={5} lg={6}>
+          <Grid item xs={12}>
+            <TableContainer component={Paper}>
+              <Table aria-label="simple table">
+                {skillDora.map((i) => (
+                  <TableRow>
+                    <TableCell>{i[0]}</TableCell>
+                    <TableCell>{i[1]}</TableCell>
+                  </TableRow>
+                ))}{" "}
+              </Table>
+            </TableContainer>
+          </Grid>
+        </Grid> */}
       </Grid>
 
       {/* <Avatar className={classes.kokoro}>?</Avatar>

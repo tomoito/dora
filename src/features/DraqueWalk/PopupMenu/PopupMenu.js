@@ -109,7 +109,7 @@ const PopupMenu = (props) => {
         // onClick={handleToggleButtonClick}
       > */}
       <Button variant="outlined" onClick={() => setIsOpen(true)}>
-        Open Modal
+        Open
       </Button>
 
       {/* </Button> */}

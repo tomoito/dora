@@ -14,7 +14,8 @@ import { useDispatch, useSelector } from "react-redux";
 
 const useSytles = makeStyles({
   serach: {
-    marginTop: 10,
+    display: "flex",
+    justify: "flex-start",
   },
   serachField: {
     display: "flex",
@@ -22,14 +23,12 @@ const useSytles = makeStyles({
   },
   toggleGroup: {
     background: "#fff",
-    spacing: "1px",
+    spacing: "10px",
   },
   toggleButton: {
-    // padding: 3,
-    // margin: 3,
-    // backgroundColor: "#99CC66",
-    fontSize: 12,
-    width: 90,
+    padding: 3,
+    margin: 3,
+    backgroundColor: "#99CC66",
   },
 
   toggleContainer: {
@@ -43,15 +42,13 @@ const useSytles = makeStyles({
     padding: 2,
   },
   filterType: {
-    // backgroundColor: "white",
-    fontSize: 12,
-    width: 90,
-    // zoom: 1.2,
-    // padding: 10,
-    // margin: 3,
+    backgroundColor: "white",
+    zoom: 1.2,
+    padding: 10,
+    margin: 3,
   },
   toggleContainer3: {
-    // display: "flex",
+    display: "flex",
     alignItems: "center",
     justifyContent: "flex-start",
   },
@@ -143,35 +140,31 @@ const SearchField = () => {
   };
 
   return (
-    <div className={classes.toggleContainer3}>
-      <Grid container direction="column" className={classes.toggleContainer3}>
-        <Paper className={classes.serach} elevation={3}>
+    <div>
+      <Grid container spacing={1}>
+        <Paper className={classes.serach}>
           <ToggleButtonGroup
             value={val}
-            // className={classes.toggleGroup}
+            className={classes.toggleGroup}
             onChange={handleClick}
           >
             {filerItem_color.map((i, y) => (
-              <Grid item xs={3}>
-                <ToggleButton value={i} className={classes.filterType}>
-                  {/* <Typography>{i}</Typography> */}
-                  {/* <Avatar
-                key={i}
-                // size="30"
-                alt={i}
-                src={`/static/filter_color/${filerItem_img[y]}`}
-              ></Avatar> */}
-                  {i}
-                </ToggleButton>
-              </Grid>
+              <ToggleButton value={i} className={classes.filterType}>
+                {/* <Typography>{i}</Typography> */}
+                <Avatar
+                  key={i}
+                  // size="30"
+                  alt={i}
+                  src={`/static/filter_color/${filerItem_img[y]}`}
+                ></Avatar>
+              </ToggleButton>
             ))}
           </ToggleButtonGroup>
         </Paper>
       </Grid>
-      <br />
-      <Grid container>
-        <Paper className={classes.serach} elevation={3}>
-          {/* <Paper className={classes.serach}> */}
+      <Grid container spacing={1} direction="column" alignItems="flex-start">
+        {/* <Paper className={classes.serach}> */}
+        <Grid item xs={8}>
           <ToggleButtonGroup
             value={filter_kouka}
             className={classes.toggleGroup}
@@ -179,35 +172,56 @@ const SearchField = () => {
             exclusive={false}
           >
             {filerItem_main.map((i, y) => (
-              <Grid item>
-                <ToggleButton value={i} className={classes.toggleButton}>
-                  {i}
-                </ToggleButton>
-              </Grid>
+              <ToggleButton value={i} className={classes.toggleButton}>
+                <Avatar
+                  key={i}
+                  alt={i}
+                  className={classes.toggleContainer}
+                  src={`/static/filter_zokusei/${filerItem_main_path[y]}`}
+                />
+              </ToggleButton>
             ))}
-            <Grid item></Grid>
           </ToggleButtonGroup>
-        </Paper>
-      </Grid>
+        </Grid>
 
-      <ToggleButtonGroup
-        value={filter_kouka}
-        className={classes.toggleGroup}
-        onChange={handleClick_option}
-        exclusive={false}
-      >
-        {filerItem_taisei.map((i, y) => (
-          <ToggleButton value={i} className={classes.toggleButton}>
-            {/* <Avatar
-              key={i}
-              alt={i}
-              className={classes.toggleContainer2}
-              src={`/static/filter_zokusei/${filerItem_taisei_path[y]}`}
-            /> */}
-            {i}
+        <Grid item xs={8}>
+          <ToggleButtonGroup
+            value={filter_kouka}
+            className={classes.toggleGroup}
+            onChange={handleClick_option}
+            exclusive={false}
+          >
+            {filerItem_taisei.map((i, y) => (
+              <ToggleButton value={i} className={classes.toggleButton}>
+                <Avatar
+                  key={i}
+                  alt={i}
+                  className={classes.toggleContainer2}
+                  src={`/static/filter_zokusei/${filerItem_taisei_path[y]}`}
+                />
+              </ToggleButton>
+            ))}
+
+            {/* {filerItem_kouka.map((i) => (
+              <ToggleButton value={i}>
+                <Avatar
+                  key={i}
+                  alt={i}
+                  src={`/static/filter_zokusei/${filerItem_taisei_path[y]}`}
+                />{" "}
+              </ToggleButton>
+            ))} */}
+          </ToggleButtonGroup>
+        </Grid>
+        {/* 
+        {filerItem_taisei.map((i) => (
+          <ToggleButton value={i}>
+            <Typography>{i}</Typography>
           </ToggleButton>
-        ))}
-      </ToggleButtonGroup>
+        ))} */}
+
+        {/* </Paper> */}
+      </Grid>
     </div>
   );
 };

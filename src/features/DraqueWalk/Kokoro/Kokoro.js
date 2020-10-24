@@ -24,7 +24,8 @@ const useStyles = makeStyles({
     alignItems: "center",
     justifyContent: "center",
     textAlign: "center",
-
+    fontSize: "1vmin",
+    // fontSizeAdjust: 1,
   },
   media: {
     height: 150,
@@ -108,7 +109,7 @@ const Kokoro = (props) => {
           </div>
         </div>
         <Typography className={classes.card}>{item.base.HP}</Typography>
-        <Typography gutterBottom variant="h6">
+        <Typography className={classes.card} gutterBottom variant="h6">
           {item.name.japanese}
         </Typography>
         <PopupMenu item={item} />

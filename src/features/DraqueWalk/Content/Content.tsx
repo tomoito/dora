@@ -17,6 +17,7 @@ import {
 } from "../DraqueWalkSlice";
 
 import Draque_one from "../../Draque one.json";
+import Seach_test from "../SearchField/Seach_test";
 type Dora = typeof Draque_one;
 
 const useStyles = makeStyles({
@@ -37,6 +38,9 @@ const useStyles = makeStyles({
   },
   mgn: {
     marginLeft: 10,
+  },
+  root: {
+    minWidth: 500,
   },
 });
 
@@ -66,38 +70,51 @@ const Content = () => {
   };
 
   return (
-    <div>
-      <Grid container spacing={2} className={classes.mgn}>
-        <Grid item container xs={12} lg={7}>
-          <Grid item container direction="column" spacing={4}>
-            <Grid item container>
-              <SearchField />
-            </Grid>
-            <Box>
-              <Grid item container spacing={1}>
-                {dispDora.map((x, y: any) => (
-                  <Grid item xs={4} lg={2}>
-                    <Kokoro
-                      item={x}
-                      index={y}
-                      key={x.id}
-                      onClick={() => onClickKokoro(x)}
-                    />
-                  </Grid>
-                ))}
-              </Grid>
-            </Box>
-          </Grid>
-        </Grid>
-        <Grid item container xs={12} lg={5}>
-          <Grid item xs={12}>
-            {/* <Box className={classes.chart}> */}
-            {/* </p> */}
-            <SelectKokoro />
-            {/* </Box> */}
-          </Grid>
+    <div className={classes.root}>
+      <Grid container>
+        <Grid item justify="center">
+          <SearchField />
+          {/* <Seach_test /> */}
         </Grid>
       </Grid>
+      <Grid container>
+        <Grid item justify="center">
+          {/* <SearchField /> */}
+        </Grid>
+      </Grid>
+
+      <Grid container item xs={12} lg={8}>
+        {dispDora.map((x, y: any) => (
+          <Grid item sm={3} xs={4} md={2} lg={2}>
+            <Kokoro
+              item={x}
+              index={y}
+              key={x.id}
+              onClick={() => onClickKokoro(x)}
+            />
+          </Grid>
+        ))}
+      </Grid>
+
+      <Grid container item xs={12} lg={3}>
+        <Grid item xs={12} spacing={5}>
+          <SelectKokoro />
+        </Grid>
+      </Grid>
+      <Box>
+        {/* <Grid item container spacing={1}>
+            {dispDora.map((x, y: any) => (
+              <Grid item xs={4} lg={2}>
+                <Kokoro
+                  item={x}
+                  index={y}
+                  key={x.id}
+                  onClick={() => onClickKokoro(x)}
+                />
+              </Grid>
+            ))}
+          </Grid> */}
+      </Box>
     </div>
   );
 };
